@@ -1,29 +1,25 @@
 # claude-workspace
 
-Shared workspace for Claude agents. Each agent gets a folder to drop files that Vlada can review on mobile.
+Shared workspace for Claude agents. Organized by project. Vlada reviews on phone.
 
-## Structure
+## Projects
 
-```
-dispatch/       → Dispatch agent drops plans, tasks, strategies
-  plans/        → Strategic plans and task breakdowns
-cowork/         → Cowork agent drops deliverables
-  html/         → HTML files, interactive views
-  docs/         → Documents, reports, exports
-shared/         → Cross-agent shared resources
-  assets/       → Images, data files, etc.
-```
+| Project | Status | Description |
+|---------|--------|-------------|
+| `_template/` | — | Copy this to start a new project |
 
 ## How it works
 
-1. An agent creates a file (HTML plan, doc, etc.)
-2. Agent pushes it to the relevant folder
-3. Vlada opens GitHub on phone → browses the file
-4. HTML files render directly via GitHub Pages or raw links
+1. **Dispatch** assigns a task and tells the agent which project folder to use
+2. **Agent** clones the repo, drops files in the right project folder, pushes
+3. **Vlada** opens GitHub on phone and reviews — HTML files render via GitHub Pages
 
 ## Viewing HTML on mobile
 
-For any HTML file, use this URL pattern to render it:
-`https://raw.githubusercontent.com/vLaD1m1r99/claude-workspace/main/cowork/html/FILENAME.html`
+```
+https://vlad1m1r99.github.io/claude-workspace/{project}/html/{file}.html
+```
 
-Or even better — we can enable GitHub Pages for instant rendering.
+## For agents
+
+Read [AGENTS.md](AGENTS.md) for setup instructions, folder conventions, and HTML templates.
